@@ -14,3 +14,7 @@ On clicking Update we can update our existing details
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/124352468/220605420-a3868ad3-dfc5-4a01-9972-adf41a846f37.png">
 
 for uploading 100 employee at a time test API using postman
+
+<img width="1429" alt="image" src="https://user-images.githubusercontent.com/124352468/220606884-21402f70-05cc-425d-bf7e-5e2c53b77ef3.png">
+
+Then our final output with employee data
