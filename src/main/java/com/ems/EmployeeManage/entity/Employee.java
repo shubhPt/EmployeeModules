@@ -1,8 +1,11 @@
 package com.ems.EmployeeManage.entity;
 
 import jakarta.persistence.*;
-import org.hibernate.annotations.JdbcTypeCode;
-import org.hibernate.type.SqlTypes;
+
+/*
+* @Entity : indicates that the class is a persistent java class
+* @table : provide map this entity
+*/
 
 @Entity
 @Table(name = "employees")
@@ -22,16 +25,16 @@ public class Employee {
     private String email;
 
     @Column(name = "phone", nullable = false)
-    private String phone;
+    private long phone;
 
     @Column(name = "emp_code", nullable = false)
-    private String empCode;
+    private int empCode;
 
 
     public Employee() {
     }
 
-    public Employee(String firstName, String lastName, String email, String phone, String empCode) {
+    public Employee(String firstName, String lastName, String email, long phone, int empCode) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -71,19 +74,19 @@ public class Employee {
         this.email = email;
     }
 
-    public String getPhone() {
+    public long getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(long phone) {
         this.phone = phone;
     }
 
-    public String getEmpCode() {
+    public int getEmpCode() {
         return empCode;
     }
 
-    public void setEmpCode(String empCode) {
+    public void setEmpCode(int empCode) {
         this.empCode = empCode;
     }
 }

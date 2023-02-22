@@ -1,17 +1,24 @@
 package com.ems.EmployeeManage.controller;
 
 import com.ems.EmployeeManage.entity.Employee;
+import com.ems.EmployeeManage.helper.ExcelHelper;
 import com.ems.EmployeeManage.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.springframework.http.MediaType.MULTIPART_FORM_DATA_VALUE;
 
 @Controller
+@CrossOrigin("*")
 public class EmployeeController {
 
     Logger logger = LoggerFactory.getLogger(EmployeeController.class);
@@ -89,5 +96,17 @@ public class EmployeeController {
                 "data been deleting"
         );
         return "redirect:/employees";
+    }
+
+    @PostMapping("/employees/upload")
+    public ResponseEntity<?> uploadEmployee(@RequestParam("file") MultipartFile file){
+        String message = "Please upload an excel file!";
+
+        if (ExcelHelper.hasExcelFormat(file)) {
+            employeeService.uploadEmployee(file);
+            return ResponseEntity.ok(Map.of("message","File is uploaded and data is save to ems"));
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("please upload excel file only ~|~");
     }
 }

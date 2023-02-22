@@ -25,7 +25,7 @@ public class EmployeeManagementApplication implements CommandLineRunner {
 	{
 		return new GreetResponse("Hello : Change URL to localhost:8080/employees",
 				List.of("Java","C++"),
-				new Person("Spring boot",20,987654321,500000.0));
+				new Person("Spring boot",20,987654321,500000));
 	}
 
 	record Person(String name,int age,long phone,double salary){
@@ -44,9 +44,10 @@ public class EmployeeManagementApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) {
 
-		Employee employee_1 = new Employee("me","back","sh.dh@gmail.com","83XXXX6500","12345");
-		Employee employee_2 = new Employee("jat","","jt@gmail.com","8XXXXXX500","T0002");
-		Employee employee_3 = new Employee("why","tel","wy.te@gmail.com","8306000500","T1234");
+		/*
+		Employee employee_1 = new Employee("me","back","sh.dh@gmail.com",89674522,12345);
+		Employee employee_2 = new Employee("jat","","jt@gmail.com",81111111500,"10002);
+		Employee employee_3 = new Employee("why","tel","wy.te@gmail.com",8306000500,1234);
 		try{
 			employeeRepository.save(employee_1);
 			employeeRepository.save(employee_2);
@@ -55,5 +56,6 @@ public class EmployeeManagementApplication implements CommandLineRunner {
 		{
 			e.printStackTrace();
 		}
+		*/
 	}
 }
