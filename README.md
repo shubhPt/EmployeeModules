@@ -10,3 +10,7 @@ By clicking on New intern details we can add more employee details
 <img width="1440" alt="image" src="https://user-images.githubusercontent.com/124352468/218972226-00885fb2-e869-41af-90b6-38bea6aa7a22.png">
 
 On clicking Update we can update our existing details
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/124352468/220605420-a3868ad3-dfc5-4a01-9972-adf41a846f37.png">
+
+for uploading 100 employee at a time test API using postman
